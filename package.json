@@ -1,5 +1,5 @@
 {
-  "name": "catalog-service",
+  "name": "school-management-service",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
