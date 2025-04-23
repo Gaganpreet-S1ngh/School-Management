@@ -10,7 +10,7 @@ export const expressApp = async () => {
   app.use(httpLogger);
 
   app.get("/", (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).json("I am healthy!");
+    res.status(200).json("Hello World!");
   });
 
   app.use(schoolRouter);
