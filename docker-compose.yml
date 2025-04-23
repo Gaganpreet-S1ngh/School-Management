@@ -1,0 +1,12 @@
+services:
+  schoolmanagement_server:
+    image: "mysql:latest"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: schoolmanagement
+      MYSQL_PASSWORD: schoolmanagementpassword
+      MYSQL_DATABASE: schoolmanagement-service
+    volumes:
+      - ./db-data/catalog_db_server/:/var/lib/mysql
