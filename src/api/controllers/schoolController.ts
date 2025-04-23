@@ -38,6 +38,8 @@ export const getSchoolsHandler = async (
     const longitude = req.query.lon as unknown as number;
     const latitude = req.query.lat as unknown as number;
 
+    console.log(longitude , latitude);
+
     const data = await schoolService.getSchools(longitude, latitude);
 
     res.status(201).json(data);
