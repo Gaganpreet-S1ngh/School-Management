@@ -55,6 +55,7 @@ export class SchoolService {
       (a, b) => a.distance - b.distance
     );
 
+    console.log(sortedSchools);
 
     return sortedSchools;
   }
