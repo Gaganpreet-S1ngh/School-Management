@@ -2,8 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { SchoolRepository } from "../../repository/SchoolRepository";
 import { SchoolService } from "../../services/schoolService";
 import { RequestValidator } from "../../utils/requestValidator";
-import { CreateSchoolRequest} from "../../dto/school.dto";
-import { SchoolType } from "../../types/SchoolType";
+import { CreateSchoolRequest } from "../../dto/school.dto";
 
 const schoolService = new SchoolService(new SchoolRepository());
 
@@ -39,10 +38,7 @@ export const getSchoolsHandler = async (
     const longitude = req.query.lon as unknown as number;
     const latitude = req.query.lat as unknown as number;
 
-    const data = await schoolService.getSchools(
-      longitude,
-      latitude
-    );
+    const data = await schoolService.getSchools(longitude, latitude);
 
     res.status(201).json(data);
   } catch (error) {
