@@ -36,18 +36,12 @@ export const getSchoolsHandler = async (
   next: NextFunction
 ) => {
   try {
-    const { errors, input } = await RequestValidator(
-      GetSchoolsRequest,
-      req.body
-    );
-
-    if (errors) {
-      res.status(400).json(errors);
-    }
+    const longitude = req.params.lon as number;
+    const latitude = req.params.lat as number;
 
     const data = await schoolService.getSchools(
-      input.longitude,
-      input.latitude
+      longitude,
+      latitude
     );
 
     res.status(201).json(data);
