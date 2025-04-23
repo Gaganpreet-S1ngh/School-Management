@@ -36,8 +36,8 @@ export const getSchoolsHandler = async (
   next: NextFunction
 ) => {
   try {
-    const longitude = req.params.lon as number;
-    const latitude = req.params.lat as number;
+    const longitude = req.params.lon as unknown as number;
+    const latitude = req.params.lat as unknown as number;
 
     const data = await schoolService.getSchools(
       longitude,
