@@ -19,15 +19,3 @@ export class CreateSchoolRequest {
   @Max(180)
   longitude: number;
 }
-
-export class GetSchoolsRequest {
-  @IsNumber()
-  @Min(-90)
-  @Max(90)
-  latitude: number;
-
-  @IsNumber()
-  @Min(-180)
-  @Max(180)
-  longitude: number;
-}
