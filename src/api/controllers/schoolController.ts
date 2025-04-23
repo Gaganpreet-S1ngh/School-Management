@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { SchoolRepository } from "../../repository/SchoolRepository";
 import { SchoolService } from "../../services/schoolService";
 import { RequestValidator } from "../../utils/requestValidator";
-import { CreateSchoolRequest, GetSchoolsRequest } from "../../dto/school.dto";
+import { CreateSchoolRequest} from "../../dto/school.dto";
 import { SchoolType } from "../../types/SchoolType";
 
 const schoolService = new SchoolService(new SchoolRepository());
