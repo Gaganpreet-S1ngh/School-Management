@@ -27,15 +27,7 @@ export class SchoolService {
   }
 
   async addSchool(schoolData: SchoolType) {
-    const checkExisting = await this._repository.findFirst({
-      where: {
-        address: schoolData.address
-      }
-    });
-
-    if(checkExisting){
-      throw new Error("School Already Exists!");
-    }
+   
     const school = await this._repository.create(schoolData);
     if (!school.id) {
       throw new Error("Unable to add the school.");
