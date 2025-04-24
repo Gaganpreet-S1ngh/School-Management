@@ -12,7 +12,7 @@ export class SchoolRepository implements ISchoolRepository {
   async create(schoolData: SchoolType): Promise<SchoolType> {
      const checkExisting = await this._prisma.school.findFirst({
       where: {
-        address: schoolData.address
+        address: schoolData.address as string
       }
     });
 
