@@ -38,7 +38,9 @@ export const getSchoolsHandler = async (
     const longitude = req.query.lon as unknown as number;
     const latitude = req.query.lat as unknown as number;
 
-    console.log(longitude , latitude);
+    if(!longitude || !latitude){
+      throw new Error("Please provide both longitude and latitude");
+    }
 
     const data = await schoolService.getSchools(longitude, latitude);
 
