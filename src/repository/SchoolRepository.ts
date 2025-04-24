@@ -10,6 +10,16 @@ export class SchoolRepository implements ISchoolRepository {
   }
 
   async create(schoolData: SchoolType): Promise<SchoolType> {
+     const checkExisting = await this._prisma.school.findFirst({
+      where: {
+        address: schoolData.address
+      }
+    });
+
+    if(checkExisting){
+      throw new Error("School Already Exists!");
+    }
+    
     return this._prisma.school.create({
       data: {
         name: schoolData.name as string,
